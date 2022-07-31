@@ -1,0 +1,25 @@
+create database bd_taller;
+use bd_taller;
+
+create table tblcliente(
+	cedula varchar(10) primary key, 
+	nombre varchar(10)
+);
+
+create table tblvehiculo(
+	placa varchar(10) primary key, 
+	modelo varchar(50),
+	color varchar(10)
+);
+
+create table tblfactura(
+id_factura int primary key auto_increment,
+cedula varchar(10),
+placa varchar(10),
+total_servicio varchar(20),
+iva varchar(2),
+descuento varchar(20),
+total_pagar varchar(20),
+foreign key(cedula) references tblcliente(cedula),
+foreign key(placa) references tblvehiculo(placa)
+);
