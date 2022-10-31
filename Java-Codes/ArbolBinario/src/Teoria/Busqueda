@@ -1,0 +1,5 @@
+Arbol binario de busqueda
+clave: campo unico para cada nodo
+mayores a la derecha, menores a la izquierda
+no pueden existir en un mismo arbol dato iguales
+

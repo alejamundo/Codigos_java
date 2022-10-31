@@ -1,0 +1,128 @@
+Arboles binarios en java
+* es una esctrura no lineal, tiene un número indefinido de apuntadores
+dentro de los arboles hay:
+    padres: son los que tienen hijos
+    hijos: son los que tienen padres
+    Nodo raiz: no tiene padre
+    Nodo hoja: no tiene hijos
+----un arbol no debe tener ciclos
+propiedades
+Nivel:3 a que distancia esta el nodo raiz del final del arbol
+Ruta: recorrido que se puede hacer para llegar a un nodo
+Altura/profundidad:3 maximo nivel que se puede tener en un arbol
+Orden: Cuantos hijos puede tener un nodo
+----------Tipos de arboles
+arbol binario: orden 2:cada nodo puede tener como maximo dos hijos
+mas utilizado, se puede usar en arboles de busqueda y avl
+tipos: Full binary tree:o hijos, tienen el numero maxino de hijos
+       Complete binary tree: faltan hijos en el ultimo nivel
+       full and complete
+Arboles degenerados: cada nodo solo tiene un hijo se comporta como si fuera una lista
+Arboles Balaciados: altura la menor pocible
+----------operaciones de acceso: 
+Insertar
+eliminar
+localizar: encontrar algo rapidamente
+recorre: se puede hacer 
+    anchura: procesar elemntos del mismo nivel y luego pasar al otro nivel
+    profundidad: se porcesan la raiz subarbol izquiero y luego derecho
+----------------------------------------------------------------------------
+    PREORDEN: R,I,D: ejemplo
+M-s-c-f-h-a-x-d-y-z 
+PRIMER NODO : RAIZ R=10
+              Clase nodo
+                    ligaIzquierda, dato, ligaDerecha
+rec.preorden(Nodo r){
+    si(r!=null){
+    imprime(r.getDato())
+    rec.preorden(r.getLigaIzquierda())//hace todo la parte izquierda
+    rec.preorden(r.getLigaDerecha())
+    }
+}
+---------------------------------------------------------------------------
+    iNORDER:I,R,D:
+C-S-H-F- 
+rec_inorden(Nodo r){
+    if(r!=null){
+    rec_inorden(r.getLigaIzquierda())
+    imprime(r.getadto())
+    rec_inorden(r.getLigaDerecha())
+    }
+}
+----------------------------------------------------------------------------
+    POSORDEN:I,D,R
+c-h-f-s-d-x-z-y-a-m
+REC_PORORDEN(NODO R)
+    IF(r!=null){
+    rec_posorden(r.getLigaIzquierda)d2
+    rec_preorden(r.getLogaderecha())d3
+    imprima(r.getDato)
+}
+-----------------------------------------------------------------------------
+recursividad: dentro del mimo metodo el metodo se puede llamar en varias partes
+que se acerque hasta que halla un fin, por cada llamada crea espacios, estos son costosos en cuanto a memoria
+
+programaPrincipal
+    rec.posOrden(raiz)//hasta que no termine el metodo no puede continuar 
+    d1-----dirrecion de retorno
+prueba se hace con pila
+imprima: C-H-F-s-d-x-z-y-a-m
+----  ----
+d3   null//desa
+----  ----
+d3    null
+----  ----
+d2    null
+----  ----
+d2    80//desa
+----  ----
+d3    70//desa
+----  ----
+d3     null//desapilo
+----  ----
+d2    null//desapilo
+----  ----
+ d3     75   //se desapila
+----  ----
+d2    null//desapilar y regresamo a d2
+----  ----
+d2    65//vuelve adesapilar
+----  ----
+d3     30//desa
+----  ----
+d3     null//desapiamos4
+----  ----
+d3     null//desapilar2
+----  ----
+d2     null//desapilar1
+----  ----
+d2     6o//desapilamos tope3
+----  ----
+d3     50 //desapila 5
+----  ----
+d3    null //se desapila
+----  ----
+d2     null// se deapila esto y contonua con lo que de ahi para abajo
+----  ----
+d2    40   //se desapila
+----  ----
+d2    20 //despailo 6
+----  ----
+d1    10
+----  ----
+
+          
+dirrecion_ retorno    R
+
+----------------------------------------------------------------
+        Arboles binarios de bUsqueda
+es necesario que los elemntos que tenemos sean comparables
+ejemplo: enteros, cadena de caracteres, objeto utilizando un clave
+Busqueda: Buscar elemntos apartir de su clave
+
+----------------------------------------------------------------
+
+
+
+
+
